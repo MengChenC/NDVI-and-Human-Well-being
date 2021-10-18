@@ -28,15 +28,15 @@ The final data we require is the vegetation index. We originally aimed to collec
 
 (The pictures showcase the result of clip function. We read in the `tif` file, and clip the data within the state boundary (here Arkansas). We can see the hollow space in the first picture has the same shape as the second one.)  
 
-<img src="Pictures\hollow_arkansas_ndvi.png">
-<img src="Pictures\arkansas_ndvi.png" width="60%" height="180%">
+<img src="Pictures\hollow_arkansas_ndvi.png" width="40%" height="40%">
+<img src="Pictures\arkansas_ndvi.png" width="30%" height="30%">
 
 We first tried to read the '.hdf' file from the NASA website; after pre-processing, we found it impossible to clip a full shape of a state when masking together with the shapefile of US states’ boundaries. The original projection is “sinusoidal”, which is different from what the shapefile stored. We thus chose the `.tif` file converted from the NASA website and found it close enough to clip the boundary of a state with NDVI information stored. One thing to note is that the EPSG [6] of the `.shp` file is stored in 4269 while the EPSG of the `.tif` we downloaded is stored in 4326. Strictly speaking, the two should be re-projected, but we approximated the two as our scope is broad enough at the state level. We validated our approach by successfully producing an approximate picture of the holistic view of the US's NDVI level.
 
 (With the vegetation indexes data covering the US mainland, we can still do the clip function, and here is the example of Illinois.)
 
-<img src="Pictures/hollow_IL.png" width="100%" height="180%">
-<img src="Pictures/illinois.png" height="50%" width="50%">
+<img src="Pictures/hollow_IL.png" width="80%" height="120%">
+<img src="Pictures/illinois.png" height="20%" width="20%">
 
 ## Parallel Computing
 
